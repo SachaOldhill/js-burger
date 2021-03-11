@@ -23,13 +23,29 @@ button.addEventListener('click', function(){
             // errore console.log(totPrice)
        }
     }
-    var couponCode = ["coupon1","coupon2","coupon3"];
+    var coupons = ["coupon1","coupon2","coupon3"];
     var couponIn = document.getElementById('burger-coupon').value;
-    var prezzo = document.getElementById('price');
-    prezzo.innerHTML= totPrice
-    if (couponCode = couponIn) {
-      var sconto = totPrice * 0.2;
-      prezzo.innerHTML=totPrice-sconto;
+    // var prezzo = document.getElementById('price');
+    // prezzo.innerHTML= totPrice;
+    // if (coupon.includes(couponIn)) {
+    //    totPrice -= totPrice * 0.2;
+    // }
+    var finded = false;
+    // var coupon = coupons[i] errore posizione
+    for (var i = 0; i < coupons.length; i++) {
+       var coupon = coupons[i]
+
+      if (coupon = couponIn) {
+        // var sconto = totPrice * 0.2; errore
+        // prezzo.innerHTML=totPrice-sconto; errore
+        finded = true;
+      }
     }
+    if (finded) {
+      // var sconto = totPrice * 0.2; errore
+      totPrice -= totPrice * 0.2;
+    }
+    var prezzo = document.getElementById('price');
+    prezzo.innerHTML= totPrice;
   }
 })

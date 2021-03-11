@@ -49,3 +49,18 @@ button.addEventListener('click', function(){
     prezzo.innerHTML= totPrice;
   }
 })
+
+ var lis = document.getElementsByTagName('li');
+ for (var i = 0; i < lis.length; i++) {
+   var li = lis[i];
+   li.addEventListener('click', function(){
+
+     var clickedli = this
+     var clickedlichildrens = this.children;
+     var clickedcheckbox = clickedlichildrens[1];
+     clickedcheckbox.checked = !clickedcheckbox.checked;
+     console.log(this, this.children[1])
+     // con this compare quello che si clicca
+     // console.log(li, 'click')
+   })
+ }
